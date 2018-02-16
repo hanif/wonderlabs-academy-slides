@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Linux Fundamental</title>
+
+  <meta name="description" content="Linux fundamental training">
+  <meta name="author" content="Hanif Ali">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/black.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/zenburn.min.css">
+  <link rel="stylesheet" href="static/css/main.css">
+
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ?
+      'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.min.css' :
+      'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.min.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+
+  </script>
+
+  <style type="text/css">
+    .reveal img#history-img,
+    .reveal img#architecture-img {
+      max-width: 75%;
+    }
+
+    .reveal img#links-img {
+      max-width: 45%;
+    }
+
+  </style>
+
+  <!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body class="antialiased">
+
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Linux Fundamental</h1>
+        <h3>Wonderlabs Academy</h3>
+        <p>
+          <small>
+            Hanif Ali &mdash;
+            <a href="https://github.com/hanif">https://github.com/hanif</a>
+          </small>
+        </p>
+      </section>
+      <section>
+        <h2>Timeline</h2>
+        <img src="static/images/linux-fundamental/timeline.png" alt="Linux Timeline" id="history-img">
+      </section>
+      <section>
+        <h2>Distribution</h2>
+        <img src="static/images/linux-fundamental/distro.png" alt="Linux Distro" id="distro-img">
+      </section>
+      <section>
+        <h2>Architecture</h2>
+        <img src="static/images/linux-fundamental/architecture.png" alt="Linux Architecture" id="architecture-img">
+      </section>
+      <section>
+        <h2>Philosophy</h2>
+
+        <br>
+
+        <p>
+          The Unix philosophy emphasizes building simple, short, clear, modular, and extensible code that can be easily maintained
+          and repurposed by developers other than its creators. The Unix philosophy favors composability as opposed to monolithic
+          design.
+        </p>
+      </section>
+      <section>
+        <h2>Philosophy</h2>
+
+        <ul>
+          <li>Everything is a File (Device I/O, Network I/O,O S Runtime, etc)</li>
+          <li>Do one thing and do it well (ls, less, more, cat)</li>
+          <li>Write programs to work together</li>
+          <li>Make every program a filter</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Getting Linux Environment</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 33%;">Bare Device</th>
+              <th style="width: 34%;">Virtualization</th>
+              <th style="width: 33%;">Container</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Your Laptop, PC, etc</td>
+              <td>Virtualbox, VMware, Parallels, etc</td>
+              <td>Docker, LCX, etc</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h2>Shell</h2>
+
+        <ul>
+          <li>The shell is a command language interpreter.</li>
+          <li>
+            <code>$>echo $SHELL</code> to know your shell.</li>
+          <li>Difference between
+            <code>$</code> and
+            <code>#</code>.</li>
+          <li>Shell is powerfull
+            <code>rm -rf /</code>.</li>
+          <li>Be carefull! Make a todo list to do something critical.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Shell</h2>
+
+        <ul>
+          <li>
+            <code>bash</code> is the default shell for almost all system.</li>
+          <li>
+            <code>sh</code> and
+            <code>bash</code>, are they the same?</li>
+          <li>
+            <code>bash</code> vs
+            <code>zsh</code>
+          </li>
+          <li>Other shells
+            <code>fish</code>,
+            <code>ksh</code>,
+            <code>tcsh</code>,
+            <code>ash</code>,
+            <code>dash</code>, etc.</li>
+          <li>Make sure that you know your shell
+            <code>man bash</code>,
+            <code>man zsh</code>, etc.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Shell</h2>
+
+        <ul>
+          <li>Know what POSIX is</li>
+          <li>
+            <code>sh --version</code>
+          </li>
+          <li>
+            <code>#!/bin/sh</code> sounds familiar?</li>
+          <li>
+            <code>printenv</code> and
+            <code>env</code>
+          </li>
+          <li>
+            <code>declare -p</code>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Secure Shell (SSH)</h2>
+
+        <p>
+          Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.
+          The best known example application is for remote login to computer systems by users.
+        </p>
+      </section>
+      <section>
+        <h2>Secure Shell (SSH)</h2>
+
+        <ul>
+          <li>It's a protocol</li>
+          <li>Use ssh to access remote shell</li>
+          <li>Difference between
+            <code>ssh</code> and
+            <code>telnet</code>
+          </li>
+          <li>Can be authenticated using identity and credentials or public key</li>
+          <li>Be careful! even though the connection is encrypted, but your command can be logged</li>
+          <li>SSH protocol also used in file transfer mechanism:
+            <code>scp</code>,
+            <code>rsync</code>,
+            <code>sftp</code>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Secure Shell (SSH)</h2>
+
+        <ul>
+          <li>
+            <code>ssh user@host</code>
+          </li>
+          <li>
+            <code>ssh -D 2121 user@host</code>
+          </li>
+          <li>
+            <code>scp ~/Documents/hello.txt user@host:~/my-private-folder</code>
+          </li>
+          <li>
+            <code>scp user@host:~/my-file.pdf ~/Downloads</code>
+          </li>
+          <li>Not to be confused with
+            <code>ssh</code>,
+            <code>scp</code>, and
+            <code>sftp</code>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Secure Shell (SSH)</h2>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>login session</li>
+                  <li>encryption</li>
+                  <li>OpenSSH</li>
+                  <li>SSH client</li>
+                  <li>localhost</li>
+                  <li>remote host</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>/etc/hosts</li>
+                  <li>SSH server</li>
+                  <li>SSH service</li>
+                  <li>sshd</li>
+                  <li>sniffer</li>
+                  <li>SSH port</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>scp</li>
+                  <li>sftp</li>
+                  <li>rsync</li>
+                  <li>public key</li>
+                  <li>private key</li>
+                  <li>plain text</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h2>Shell Commands</h2>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>whoami</li>
+                  <li>last</li>
+                  <li>history</li>
+                  <li>iostat</li>
+                  <li>vmstat</li>
+                  <li>ethtool</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>netstat</li>
+                  <li>ipconfig</li>
+                  <li>lspci</li>
+                  <li>cat</li>
+                  <li>less</li>
+                  <li>more</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>free</li>
+                  <li>mtop</li>
+                  <li>htop</li>
+                  <li>uptime</li>
+                  <li>ls</li>
+                  <li>ps</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h2>Directory Structure</h2>
+
+        <img src="static/images/linux-fundamental/directory-structure.gif" alt="Linux Directory Structure" id="directory-structure-img">
+        <p>
+          <small>
+            Source:
+            <a href="http://www.oreilly.com/openbook/debian/book/appa_01.html">http://www.oreilly.com/openbook/debian/book/appa_01.html</a>
+          </small>
+        </p>
+      </section>
+      <section>
+        <h2>File Permissions</h2>
+
+        <img src="static/images/linux-fundamental/file-permissions.gif" alt="Linux File Permissions" id="file-permissions-img">
+        <p>
+          <small>
+            Source:
+            <a href="http://thelinuxstuff.blogspot.co.id/2012/07/linux-file-permissions.html">http://thelinuxstuff.blogspot.co.id/2012/07/linux-file-permissions.html</a>
+          </small>
+        </p>
+      </section>
+      <section>
+        <h2>File Permissions</h2>
+
+        <ul>
+          <li>
+            <code>chmod 0777 ./my-file</code>
+          </li>
+          <li>
+            <code>chmod 0644 ./my-file</code>
+          </li>
+          <li>
+            <code>chmod 0744 ./my-file</code>
+          </li>
+          <li>
+            <code>chmod u=rwx ./my-file</code>
+          </li>
+          <li>
+            <code>chmod o+r ./my-file</code>
+          </li>
+          <li>
+            <code>chmod a+x ./my-file</code>
+          </li>
+          <li>
+            <code>chmod g-w ./my-file</code>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Links</h2>
+
+        <img src="static/images/linux-fundamental/links.png" alt="Linux Links" id="links-img">
+        <p>
+          <small>
+            Source:
+            <a href="http://muneel.com/2016/12/28/creating-symbolic-link-soft-link-in-linux/">http://muneel.com/2016/12/28/creating-symbolic-link-soft-link-in-linux/</a>
+          </small>
+        </p>
+      </section>
+      <section>
+        <h2>Redirections</h2>
+
+        <img src="static/images/linux-fundamental/stdin-stdout-stderr.png" alt="Linux Redirects" id="redirects-img">
+        <p>
+          <small>
+            Source:
+            <a href="https://www.linuxunit.com/io-redirection-stdin-stdout-stderr-streams/">https://www.linuxunit.com/io-redirection-stdin-stdout-stderr-streams/</a>
+          </small>
+        </p>
+      </section>
+      <section>
+        <h2>Redirections</h2>
+
+        <img src="static/images/linux-fundamental/redirection-symbols.jpg" alt="Linux Redirection Symbols" id="redirection-symbols-img">
+        <p>
+          <small>
+            Source:
+            <a href="http://geek-university.com/linux/redirect-input-and-output/">http://geek-university.com/linux/redirect-input-and-output/</a>
+          </small>
+        </p>
+      </section>
+      <section>
+        <h2>Cron</h2>
+
+        <img src="static/images/linux-fundamental/cron.jpg" alt="Linux Cron" id="cron-img">
+        <p>
+          <small>
+            Source:
+            <a href="http://ask.xmodulo.com/add-cron-job-linux.html">http://ask.xmodulo.com/add-cron-job-linux.html</a>
+          </small>
+        </p>
+      </section>
+      <section>
+        <h2>References</h2>
+
+        <ul class="x2-smaller">
+          <li>https://en.wikipedia.org/wiki/Linux</li>
+          <li>https://en.wikipedia.org/wiki/Man_page</li>
+          <li>https://en.wikipedia.org/wiki/Shell_(computing)</li>
+          <li>https://en.wikipedia.org/wiki/Bash_(Unix_shell)</li>
+          <li>https://en.wikipedia.org/wiki/Secure_Shell</li>
+          <li>http://www.tldp.org/LDP/intro-linux/html/sect_03_01.html</li>
+          <li>https://askubuntu.com/questions/275965/how-to-list-all-variables-names-and-their-current-values</li>
+          <li>http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html</li>
+          <li>https://www.quora.com/What-is-the-difference-between-bash-and-zsh</li>
+          <li>https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash</li>
+          <li>http://hyperpolyglot.org/unix-shells</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
+
+  <script type="text/javascript">
+    Reveal.initialize({
+      controls: true,
+      controlsTutorial: true,
+      controlsLayout: 'bottom-right',
+      controlsBackArrows: 'faded',
+      progress: true,
+      defaultTiming: null,
+      slideNumber: true,
+      history: false,
+      keyboard: true,
+      overview: true,
+      center: true,
+      touch: true,
+      loop: false,
+      rtl: false,
+      shuffle: false,
+      fragments: true,
+      embedded: false,
+      help: true,
+      showNotes: false,
+      autoPlayMedia: null,
+      autoSlide: 0,
+      autoSlideStoppable: true,
+      autoSlideMethod: Reveal.navigateNext,
+      mouseWheel: false,
+      hideAddressBar: true,
+      previewLinks: false,
+      transition: 'convex',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      viewDistance: 3,
+      parallaxBackgroundImage: '',
+      parallaxBackgroundSize: '',
+      parallaxBackgroundHorizontal: null,
+      parallaxBackgroundVertical: null,
+      display: 'block',
+      dependencies: [{
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js',
+          condition: function () {
+            return !document.body.classList;
+          }
+        },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js',
+          condition: function () {
+            return !!document.querySelector('[data-markdown]');
+          }
+        },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.min.js',
+          condition: function () {
+            return !!document.querySelector('[data-markdown]');
+          }
+        },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/highlight/highlight.min.js',
+          async: true,
+          callback: function () {
+            hljs.initHighlightingOnLoad();
+          }
+        },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/search/search.min.js',
+          async: true
+        },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.min.js',
+          async: true
+        },
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.min.js',
+          async: true
+        }
+      ]
+    });
+
+  </script>
+</body>
+
+</html>
